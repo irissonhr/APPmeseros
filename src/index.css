@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+/* =========================================
+   PALETA DE COLORES PREMIUM (Onyx & Silver)
+   ========================================= */
+:root {
+  --bg-main: #030303; /* Fondo casi negro */
+  --bg-card: rgba(18, 18, 20, 0.7); /* Cristal oscuro */
+  --bg-elevated: #18181b;
+  --border-color: rgba(255, 255, 255, 0.08); /* Borde sutil de 1px */
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+
+  /* El detalle plateado/blanco */
+  --accent-bg: #ffffff;
+  --accent-text: #000000;
+  --accent-glow: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   ESTILOS BASE
+   ========================================= */
+.app-bg {
+  background-color: var(--bg-main);
+  /* Resplandor sutil en el fondo (opcional, da profundidad) */
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 70%
+  );
+}
+
+/* TARJETAS PREMIUM */
+.app-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px); /* Efecto cristal */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem; /* Bordes más redondeados */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover de tarjetas interactivas */
+.app-card-hover:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px) scale(1.005);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* BOTÓN PRINCIPAL (Blanco Elegante) */
+.btn-accent {
+  background-color: var(--accent-bg);
+  color: var(--accent-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.btn-accent:hover {
+  background-color: #f4f4f5;
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* BOTÓN SECUNDARIO (Borde de cristal) */
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+}
+
+/* INPUTS ELEGANTES */
+.app-input {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+.app-input:focus {
+  outline: none;
+  border-color: var(--border-hover);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ETIQUETAS (Badges) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.badge-success {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.2);
+}
+.badge-warning {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.2);
+}
+.badge-danger {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
+}
+
+/* Animaciones Fluidas */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar de lujo */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
